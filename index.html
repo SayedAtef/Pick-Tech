@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8a61c90587.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <title>Pick Tech</title>
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+
+        <h1 class="display-3 text-center ">
+            <i class="fas fa-laptop text-primary"></i> Pick <span class="text-primary">Tech</span> 
+        </h1>
+
+        <div class="card text-white bg-primary mb-3 text-center mx-auto mt-5" style="max-width: 20rem;">
+            <div class="card-header">Profits till Now</div>
+            <div class="card-body">
+              <h1 class="card-title" id="main-event">0</h1>
+            </div>
+          </div>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block mt-5 p-3" id="purchase-button">Add Purchase <i class="fas fa-dollar-sign"></i></button>
+        <form class="d-none" id="purchase-container">
+            <div class="form-group mt-3">
+                 <label class="col-form-label text-info font-weight-bold" for="item-code">Enter Item Code</label>
+                <input type="number" class="form-control" placeholder="ex: 2211" id="item-code">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-info font-weight-bold" for="money-in">Sold With ...</label>
+                <input type="number" class="form-control" placeholder="enter amount of money the item was sold by" id="money-in">
+            </div>
+            <input type="submit" class="btn btn-secondary btn-lg">
+        </form>
+        
+        <button type="button" class="btn btn-primary btn-lg btn-block mt-2 p-3" id="profits-button">Add Profit <i class="fas fa-dollar-sign"></i></button>
+        <form class="d-none" id="profits-container">
+            <div class="form-group mt-3">
+                 <label class="col-form-label text-info font-weight-bold" for="profit-amount">Enter Profit</label>
+                <input type="number" class="form-control" placeholder="enter amount of money you collected from maintenance or others" id="profit-amount">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-info font-weight-bold" for="description">Description <i class="fas fa-tools"></i></label>
+                <input type="text" class="form-control" placeholder="enter description for the profit if you like" id="description">
+            </div>
+            <input type="submit" class="btn btn-secondary btn-lg">
+        </form>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block mt-2 p-3" id="item-button">Add Item To Storage <i class="fas fa-laptop ml-3"></i> <i class="fas fa-mouse"></i> <i class="far fa-keyboard"></i></button>
+        <form class="d-none" id="item-container">
+            <div class="form-group mt-3">
+                 <label class="col-form-label text-info font-weight-bold" for="item-name">Enter Item Name</label>
+                <input type="text" class="form-control" placeholder="ex: mouse" id="item-name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-info font-weight-bold" for="item-code-entery">Enter Item Code</label>
+                <input type="number" class="form-control" placeholder="enter a unique code for the item" id="item-code-entery">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label text-info font-weight-bold" for="money-paid">Paid With ...</label>
+                <input type="number" class="form-control" placeholder="enter amount of money item was bought by" id="money-paid">
+            </div>
+            <input type="submit" class="btn btn-secondary btn-lg">
+        </form>
+        
+        <button type="button" class="btn btn-primary btn-lg btn-block mt-2 p-3" id="tables-button">Tables</button>
+
+        <div class="d-none" id="tables-container">
+          <nav>
+            <div class="nav nav-tabs nav-justified mt-4" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-storage-tab" data-toggle="tab" href="#nav-storage" role="tab" aria-controls="nav-storage" aria-selected="true">Storage</a>
+              <a class="nav-item nav-link" id="nav-profit-tab" data-toggle="tab" href="#nav-profit" role="tab" aria-controls="nav-profit" aria-selected="false">Profit</a>
+            </div>
+          </nav>
+
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-storage" role="tabpanel" aria-labelledby="nav-storage-tab">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Item Code</th>
+                            <th>Money paid</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="storage-list"></tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="nav-profit" role="tabpanel" aria-labelledby="nav-profit-tab">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Sold - Money In</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="profit-list"></tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
